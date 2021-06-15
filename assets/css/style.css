@@ -1,0 +1,18 @@
+@import "reboot.css";
+
+*{
+    
+}
+/* Classes prédéfinies */
+
+.row{
+    display: flex;
+}
+
+.full{
+    width: 100%;
+}
+
+.column{
+    flex-direction: column;
+}
