@@ -1,20 +1,50 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <meta name="referrer" content="origin-when-cross-origin">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="icon" type="image/svg" href="assets/media/images/building.svg" />
-    <title></title>
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
+<?php
 
-<body>
+define('REALPATH', __DIR__);
+define('ROOTFOLDER', '/pulsar');
+//echo __DIR__;
+//echo '<br>';
+//echo __FILE__;
 
-</body>
-</html>
-<script src="https://kit.fontawesome.com/ea8e16aa74.js" crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script>
+/*
+ * ======================================================
+ * ================ Paramètres de base ==================
+ * ======================================================
+ */
+
+$env = 'dev'; // 'prod' si un serveur distant
+
+if ($env === 'prod') {
+
+    define('DOMAIN', ROOTFOLDER);
+
+} elseif ($env === 'dev') {
+
+    define('DOMAIN', 'http://localhost' . ROOTFOLDER);
+
+}
+/*
+ * ======================================================
+ * ================== Rendu des vues ====================
+ * ======================================================
+ */
+
+require (REALPATH . '/includes/function.php');
+
+navigation();
+
+
+
+
+
+
+
+
+
+//echo REALPATH;    Erreur car afficher un array en string est impossible
+//$dir = scandir(REALPATH);
+
+//echo '<pre>';    inutile avec wamp, permet l'empilement des éléments de l'array
+  //var_dump($dir);
+  //echo '</pre>';   inutile avec wamp, permet l'empilement des éléments de l'array
+  ?>
